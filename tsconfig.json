@@ -29,5 +29,5 @@
     "strictBindCallApply": false,
     "noFallthroughCasesInSwitch": false
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*", "../nestjs-infra/src/env"]
 }
