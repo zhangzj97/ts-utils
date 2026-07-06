@@ -36,10 +36,7 @@ jobs:
         run: pnpm build
 
       - name: Compress dist to tar
-        run: tar -czf dist.tar.gz dist
-
-      - name: Full Tar
-        run: tar -czf full.tar.gz dist package.json
+        run: tar -czf dist.tar.gz dist package.json
 
       - name: Generate GitHub Release
         uses: softprops/action-gh-release@v2
