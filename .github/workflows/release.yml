@@ -38,6 +38,9 @@ jobs:
       - name: Compress dist to tar
         run: tar -czf dist.tar.gz dist
 
+      - name: Full Tar
+        run: tar -czf full.tar.gz . --exclude=node_modules
+
       - name: Generate GitHub Release
         uses: softprops/action-gh-release@v2
         with:
