@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: 20 }
+        with: { node-version: lts }
       - run: npm i
       - run: npm run build # 生成dist
       # 打包dist为压缩包
