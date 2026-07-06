@@ -1,7 +1,7 @@
 ```shell
 pnpm approve-builds
 
-pnpm add typescript@latest tsx oxfmt oxlint cross-env @types/node -D
+pnpm add typescript@latest tsx tsup oxfmt oxlint cross-env @types/node -D
 pnpm add dotenv
 
 pnpm add @sapphire/snowflake
