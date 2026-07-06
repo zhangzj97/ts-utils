@@ -4,6 +4,10 @@ on:
     tags:
       - "v*"
 
+# 关键：授予发布权限
+permissions:
+  contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,11 +20,10 @@ jobs:
         with:
           node-version: "22"
 
-      # 单独安装 pnpm
-      - name: Install pnpm
+      - name: Install pnpm globally
         run: npm install -g pnpm
 
-      - name: Cache pnpm dependencies
+      - name: Cache pnpm store
         uses: actions/cache@v4
         with:
           path: ~/.local/share/pnpm/store
@@ -29,13 +32,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Build dist
+      - name: Build dist bundle
         run: pnpm build
 
-      - name: Package dist
+      - name: Compress dist to tar
         run: tar -czf dist.tar.gz dist
 
-      - name: Create GitHub Release
+      - name: Generate GitHub Release
         uses: softprops/action-gh-release@v2
         with:
           files: dist.tar.gz
