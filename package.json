@@ -19,7 +19,8 @@
   "scripts": {
     "type-check": "tsc --noEmit",
     "dev": "tsx src/index.ts",
-    "build": "tsdown src/index.ts --format esm,cjs --dts --clean"
+    "build": "tsdown src/index.ts --format esm,cjs --dts --clean",
+    "release": "node scripts/release.js"
   },
   "dependencies": {
     "@sapphire/snowflake": "^3.5.5"
