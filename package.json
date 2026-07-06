@@ -1,6 +1,6 @@
 {
   "name": "ts-utils",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "description": "",
   "keywords": [],
   "license": "ISC",
@@ -17,16 +17,16 @@
     }
   },
   "scripts": {
+    "type-check": "tsc --noEmit",
     "dev": "tsx src/index.ts",
-    "build": "tsup src/index.ts --format esm,cjs --dts --clean"
+    "build": "tsup src/index.ts --format esm,cjs --dts --clean",
+    "release": "pnpm type-check && pnpm build && release-it"
   },
   "dependencies": {
-    "@sapphire/snowflake": "^3.5.5",
-    "dotenv": "^17.4.2"
+    "@sapphire/snowflake": "^3.5.5"
   },
   "devDependencies": {
     "@types/node": "^26.1.0",
-    "cross-env": "^10.1.0",
     "oxfmt": "^0.57.0",
     "oxlint": "^1.72.0",
     "tsup": "^8.5.1",
