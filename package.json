@@ -5,6 +5,9 @@
   "keywords": [],
   "license": "ISC",
   "author": "",
+  "bin": {
+    "release": "./dist/release.js"
+  },
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -20,7 +23,7 @@
     "type-check": "tsc --noEmit",
     "dev": "tsx src/index.ts",
     "build": "tsdown src/index.ts --format esm,cjs --dts --clean",
-    "release": "node scripts/release.js"
+    "release": "tsx src/release.ts"
   },
   "dependencies": {
     "@sapphire/snowflake": "^3.5.5"
