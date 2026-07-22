@@ -22,7 +22,7 @@
   "scripts": {
     "type-check": "tsc --noEmit",
     "dev": "tsx src/index.ts",
-    "build": "tsdown src/index.ts --format esm,cjs --dts --clean",
+    "build": "tsdown src/index.ts src/release.ts --format esm,cjs --dts --clean --preserve-shebang",
     "release": "tsx src/release.ts"
   },
   "dependencies": {
